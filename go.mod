@@ -23,7 +23,7 @@ go 1.22.0
 toolchain go1.22.5
 
 require (
-	github.com/G-Research/yunikorn-core v0.0.0-20241010094036-f478acaa0177
+	github.com/G-Research/yunikorn-core v0.0.0-20241023184002-b83a2897759a
 	github.com/G-Research/yunikorn-scheduler-interface v0.0.0-20241010085204-da837381ae08
 	github.com/google/go-cmp v0.6.0
 	github.com/google/uuid v1.6.0
@@ -99,6 +99,7 @@ require (
 	github.com/monochromegane/go-gitignore v0.0.0-20200626010858-205db1a8cc00 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/mxk/go-flowrate v0.0.0-20140419014527-cca7078d478f // indirect
+	github.com/oklog/ulid/v2 v2.1.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/opencontainers/runc v1.1.14 // indirect
 	github.com/opencontainers/runtime-spec v1.0.3-0.20220909204839-494a5a6aca78 // indirect
