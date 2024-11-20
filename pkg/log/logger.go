@@ -294,7 +294,7 @@ func parseLevel(level string) *zapcore.Level {
 	// parse numeric
 	levelNum, err := strconv.ParseInt(level, 10, 31)
 	if err == nil {
-		zapLevel = zapcore.Level(levelNum)
+		zapLevel = zapcore.Level(levelNum) //nolint:gosec
 		if zapLevel < zapcore.DebugLevel {
 			zapLevel = zapcore.DebugLevel
 		}
