@@ -225,7 +225,7 @@ endif
 # Image build parameters
 # This tag of the image must be changed when pushed to a public repository.
 ifeq ($(REGISTRY),)
-REGISTRY := apache
+REGISTRY := gresearch
 endif
 
 # Force Go modules even when checked out inside GOPATH
