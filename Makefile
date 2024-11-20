@@ -195,7 +195,7 @@ export SPARK_VERSION=3.3.3
 export SPARK_PYTHON_VERSION=3.3.1
 export SPARK_HOME=$(BASE_DIR)$(TOOLS_DIR)/spark-v$(SPARK_VERSION)
 export SPARK_SUBMIT_CMD=$(SPARK_HOME)/bin/spark-submit
-export SPARK_PYTHON_IMAGE=docker.io/G-Research/spark-py:v$(SPARK_PYTHON_VERSION)
+export SPARK_PYTHON_IMAGE=docker.io/apache/spark-py:v$(SPARK_PYTHON_VERSION)
 export PATH := $(SPARK_HOME):$(PATH)
 
 # go-licenses
@@ -718,4 +718,4 @@ stop-cluster: $(KIND_BIN)
 e2e_test: tools
 	@echo "running e2e tests"
 	cd ./test/e2e && \
-	ginkgo -r $(E2E_TEST) -v -keep-going -- -yk-namespace "yunikorn" -kube-config $(KUBECONFIG)
+	ginkgo -r $(E2E_TEST) -v --no-color -keep-going -- -yk-namespace "yunikorn" -kube-config $(KUBECONFIG)
