@@ -18,12 +18,12 @@
 
 module github.com/G-Research/yunikorn-k8shim
 
-go 1.22.0
+go 1.23.2
 
-toolchain go1.22.5
+toolchain go1.23.3
 
 require (
-	github.com/G-Research/yunikorn-core v0.0.0-20241118203905-a20bf1e75751
+	github.com/G-Research/yunikorn-core v0.0.0-20241120004812-3d39b65572b7
 	github.com/G-Research/yunikorn-scheduler-interface v0.0.0-20241010085204-da837381ae08
 	github.com/google/go-cmp v0.6.0
 	github.com/google/uuid v1.6.0
@@ -53,6 +53,7 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/blang/semver/v4 v4.0.0 // indirect
+	github.com/brianvoe/gofakeit/v7 v7.1.2 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/coreos/go-semver v0.3.1 // indirect
@@ -107,6 +108,7 @@ require (
 	github.com/peterbourgon/diskv v2.0.1+incompatible // indirect
 	github.com/petermattis/goid v0.0.0-20240813172612-4fcff4a6cae7 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.55.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
@@ -114,6 +116,7 @@ require (
 	github.com/spf13/cobra v1.8.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
+	github.com/stretchr/testify v1.9.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	github.com/xlab/treeprint v1.2.0 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.14 // indirect
