@@ -162,7 +162,7 @@ endif
 export PATH := $(BASE_DIR)/$(SHELLCHECK_PATH):$(PATH)
 
 # golangci-lint
-GOLANGCI_LINT_VERSION=1.57.2
+GOLANGCI_LINT_VERSION=1.62.0
 GOLANGCI_LINT_PATH=$(TOOLS_DIR)/golangci-lint-v$(GOLANGCI_LINT_VERSION)
 GOLANGCI_LINT_BIN=$(GOLANGCI_LINT_PATH)/golangci-lint
 GOLANGCI_LINT_ARCHIVE=golangci-lint-$(GOLANGCI_LINT_VERSION)-$(OS)-$(EXEC_ARCH).tar.gz
@@ -195,7 +195,7 @@ export SPARK_VERSION=3.3.3
 export SPARK_PYTHON_VERSION=3.3.1
 export SPARK_HOME=$(BASE_DIR)$(TOOLS_DIR)/spark-v$(SPARK_VERSION)
 export SPARK_SUBMIT_CMD=$(SPARK_HOME)/bin/spark-submit
-export SPARK_PYTHON_IMAGE=docker.io/G-Research/spark-py:v$(SPARK_PYTHON_VERSION)
+export SPARK_PYTHON_IMAGE=docker.io/apache/spark-py:v$(SPARK_PYTHON_VERSION)
 export PATH := $(SPARK_HOME):$(PATH)
 
 # go-licenses
@@ -718,4 +718,4 @@ stop-cluster: $(KIND_BIN)
 e2e_test: tools
 	@echo "running e2e tests"
 	cd ./test/e2e && \
-	ginkgo -r $(E2E_TEST) -v -keep-going -- -yk-namespace "yunikorn" -kube-config $(KUBECONFIG)
+	ginkgo -r $(E2E_TEST) -v --no-color -keep-going -- -yk-namespace "yunikorn" -kube-config $(KUBECONFIG)

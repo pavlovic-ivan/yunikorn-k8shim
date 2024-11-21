@@ -173,7 +173,7 @@ func (mgr *PlaceholderManager) Stop() {
 }
 
 func (mgr *PlaceholderManager) isRunning() bool {
-	return mgr.running.Load().(bool)
+	return mgr.running.Load().(bool) //nolint:errcheck
 }
 
 func (mgr *PlaceholderManager) setRunning(flag bool) {

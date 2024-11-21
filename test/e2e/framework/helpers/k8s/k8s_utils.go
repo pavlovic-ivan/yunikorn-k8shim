@@ -631,7 +631,7 @@ func GetConfigMapObj(yamlPath string) (*v1.ConfigMap, error) {
 	if err != nil {
 		return nil, err
 	}
-	return c.(*v1.ConfigMap), err
+	return c.(*v1.ConfigMap), err //nolint:errcheck
 }
 
 func (k *KubeCtl) LogNamespaceInfo(file *os.File, ns string) error {
@@ -742,7 +742,7 @@ func GetPodObj(yamlPath string) (*v1.Pod, error) {
 	if err != nil {
 		return nil, err
 	}
-	return o.(*v1.Pod), err
+	return o.(*v1.Pod), err //nolint:errcheck
 }
 
 func (k *KubeCtl) CreateDeployment(deployment *appsv1.Deployment, namespace string) (*appsv1.Deployment, error) {
@@ -1096,7 +1096,7 @@ func GetSecretObj(yamlPath string) (*v1.Secret, error) {
 	if err != nil {
 		return nil, err
 	}
-	return o.(*v1.Secret), err
+	return o.(*v1.Secret), err //nolint:errcheck
 }
 
 func (k *KubeCtl) CreateServiceAccount(accountName string, namespace string) (*v1.ServiceAccount, error) {

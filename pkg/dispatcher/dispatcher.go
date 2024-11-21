@@ -71,7 +71,7 @@ func initDispatcher() {
 	}
 	dispatcher.setRunning(false)
 	DispatchTimeout = conf.GetSchedulerConf().DispatchTimeout
-	AsyncDispatchLimit = max(10000, int32(eventChannelCapacity/10))
+	AsyncDispatchLimit = max(10000, int32(eventChannelCapacity/10)) //nolint:gosec
 
 	log.Log(log.ShimDispatcher).Info("Init dispatcher",
 		zap.Int("EventChannelCapacity", eventChannelCapacity),
@@ -146,7 +146,7 @@ func Dispatch(event events.SchedulingEvent) {
 }
 
 func (p *Dispatcher) isRunning() bool {
-	return p.running.Load().(bool)
+	return p.running.Load().(bool) //nolint:errcheck
 }
 
 func (p *Dispatcher) setRunning(flag bool) {

@@ -103,7 +103,7 @@ func DecoratePodForGangScheduling(
 
 func InitTaskGroups(conf SleepPodConfig, mainTaskGroupName, secondTaskGroupName string, parallelism int) []*cache.TaskGroup {
 	tg1 := &cache.TaskGroup{
-		MinMember: int32(parallelism),
+		MinMember: int32(parallelism), //nolint:gosec
 		Name:      mainTaskGroupName,
 		MinResource: map[string]resource.Quantity{
 			"cpu":    resource.MustParse(strconv.FormatInt(conf.CPU, 10) + "m"),
@@ -114,7 +114,7 @@ func InitTaskGroups(conf SleepPodConfig, mainTaskGroupName, secondTaskGroupName 
 	// create TG2 more with more members than needed, also make sure that
 	// placeholders will stay in Pending state
 	tg2 := &cache.TaskGroup{
-		MinMember: int32(parallelism + 1),
+		MinMember: int32(parallelism + 1), //nolint:gosec
 		Name:      secondTaskGroupName,
 		MinResource: map[string]resource.Quantity{
 			"cpu":    resource.MustParse(strconv.FormatInt(conf.CPU, 10) + "m"),
