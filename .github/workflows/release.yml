@@ -30,7 +30,7 @@ jobs:
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
       - name: Run build and tag with version
-        run: make image DOCKER_ARCH=${{ matrix.arch }} REGISTRY=gresearch VERSION=v0.0.1
+        run: make image DOCKER_ARCH=${{ matrix.arch }} REGISTRY=gresearch VERSION=${{ steps.get_version.outputs.VERSION }}
 
       - name: Run build and tag with latest version
         run: make image DOCKER_ARCH=${{ matrix.arch }} REGISTRY=gresearch VERSION=latest
